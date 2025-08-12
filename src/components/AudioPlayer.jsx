@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Pause, SkipBack, SkipForward, Volume2, Upload } from 'lucide-react';
-import { audioService } from '../services/audioService';
+import audioService  from '../services/audioService';
 import storageService  from '../services/storageService';
 
 const AudioPlayer = ({ currentTrack, tracks, onTrackChange, onTracksUpdate }) => {

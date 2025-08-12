@@ -7,7 +7,7 @@ const STORAGE_KEYS = {
   PLAYLIST_STATE: 'audioPlayer_playlistState'
 };
 
-class StorageService {
+class storageService {
   // Track management
   static saveTracks(tracks) {
     try {

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Create Create - MP3 Player</title>
+    <meta name="description" content="A modern MP3 player with upload capabilities and audio visualization" />
+    
+    <!-- Preconnect to improve performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Web App Manifest for PWA features -->
+    <meta name="theme-color" content="#1f2937" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="Create Create Create - MP3 Player">
+    <meta property="og:description" content="A modern MP3 player with upload capabilities and audio visualization">
+    <meta property="og:type" content="website">
+    
+    <!-- Performance optimization -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    
+    <!-- Accessibility improvements -->
+    <meta name="color-scheme" content="light dark">
+  </head>
+  <body class="bg-gray-900 text-white antialiased">
+    <noscript>
+      <div style="text-align: center; padding: 2rem; background: #1f2937; color: white;">
+        <h1>JavaScript Required</h1>
+        <p>This MP3 player requires JavaScript to function properly. Please enable JavaScript in your browser settings.</p>
+      </div>
+    </noscript>
+    
+    <!-- Main application container -->
+    <div id="root" class="min-h-screen">
+      <!-- Loading fallback -->
+      <div class="flex items-center justify-center min-h-screen">
+        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500"></div>
+      </div>
+    </div>
+    
+    <!-- Audio visualization canvas will be inserted here by React -->
+    <canvas id="visualizer-canvas" class="hidden" width="800" height="200"></canvas>
+    
+    <!-- Service Worker registration for offline capabilities -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js').catch(function(error) {
+            console.log('ServiceWorker registration failed: ', error);
+          });
+        });
+      }
+    </script>
+    
+    <!-- React application entry point -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

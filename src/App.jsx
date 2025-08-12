@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import AudioPlayer from './components/AudioPlayer'
 import TrackList from './components/TrackList'
-import { storageService } from './services/storageService'
+import  storageService  from './services/storageService'
 
 function App() {
   const [tracks, setTracks] = useState([])
